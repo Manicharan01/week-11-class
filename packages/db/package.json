@@ -1,0 +1,32 @@
+{
+  "name": "@repo/db",
+  "version": "1.0.0",
+  "main": "./src/index",
+  "types": "./src/index",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "exports":{
+      "./admin": {
+          "types": "./src/Admin.ts",
+          "default": "./src/Admin.ts"
+      },
+      "./user": {
+          "types": "./src/User.ts",
+          "default": "./src/User.ts"
+
+      },
+      "./course": {
+          "types": "./src/Course.ts",
+          "default": "./src/Course.ts"
+      }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/mongoose": "^5.11.96",
+    "mongoose": "^8.5.1"
+  }
+}
