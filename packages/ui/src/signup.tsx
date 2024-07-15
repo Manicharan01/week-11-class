@@ -1,6 +1,10 @@
 import { Card, Button, TextField, Typography } from '@mui/material';
+import { useState } from 'react';
 
 export function Signup() {
+    const [username, setUsername] = useState("")
+    const [password, setPassword] = useState("")
+
     return <div>
         <div style={{
             paddingTop: '150px',
@@ -18,17 +22,25 @@ export function Signup() {
         }}>
             <Card variant={"outlined"} style={{ width: 400, padding: 20 }}>
                 <TextField
+                    value={username}
                     variant="outlined"
                     type="text"
                     label="Username"
                     fullWidth={true}
+                    onChange={(e) => {
+                        setUsername(e.target.value);
+                    }}
                 />
                 <br /><br />
                 <TextField
+                    value={password}
                     variant="outlined"
                     type="text"
                     label="Password"
                     fullWidth={true}
+                    onChange={(e) => {
+                        setPassword(e.target.value);
+                    }}
                 />
                 <br /><br />
                 <Button variant="contained" size={"large"}><Typography>Sign Up</Typography></Button>
