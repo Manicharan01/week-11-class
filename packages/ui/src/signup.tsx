@@ -1,7 +1,12 @@
 import { Card, Button, TextField, Typography } from '@mui/material';
 import { useState } from 'react';
+import { adminState } from '@repo/store/atoms/admin';
+import { useRecoilState } from 'recoil';
 
-export function Signup() {
+export function Signup(props: {
+    onClick: (username: string, password: string) => void
+}) {
+    const [admins, setAdmin] = useRecoilState(adminState);
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
 
@@ -35,7 +40,7 @@ export function Signup() {
                 <TextField
                     value={password}
                     variant="outlined"
-                    type="text"
+                    type={"password"}
                     label="Password"
                     fullWidth={true}
                     onChange={(e) => {
@@ -43,7 +48,15 @@ export function Signup() {
                     }}
                 />
                 <br /><br />
-                <Button variant="contained" size={"large"}><Typography>Sign Up</Typography></Button>
+                <Button
+                    variant="contained"
+                    size={"large"}
+                    onClick={async () => {
+                        props.onClick(username, password)
+                        setAdmin([...admins, { username: username, password: password }])
+                    }}
+                ><Typography>Sign Up</Typography>
+                </Button>
             </Card>
         </div>
     </div>

@@ -1,0 +1,15 @@
+{
+  "name": "@repo/secret",
+  "version": "1.0.0",
+  "exports": {
+    "./secret": "./src/index.ts",
+    "./db": "./src/dbConnect.ts"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
