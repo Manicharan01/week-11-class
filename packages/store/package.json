@@ -1,0 +1,21 @@
+{
+  "name": "@repo/store",
+  "version": "1.0.0",
+  "exports": {
+      "./atoms/admin": "./src/atoms/admin.ts",
+      "./atoms/courses": "./src/atoms/course.ts",
+      "./selectors/admin": "./src/selectors/admin.ts",
+      "./selectors/courses": "./src/selectors//course.ts"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/recoil": "^0.0.1",
+    "recoil": "^0.7.7"
+  }
+}
